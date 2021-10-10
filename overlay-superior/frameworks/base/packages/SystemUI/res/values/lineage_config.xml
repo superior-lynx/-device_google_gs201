@@ -15,6 +15,12 @@
      limitations under the License.
 -->
 <resources>
+<<<<<<< HEAD:overlay-superior/frameworks/base/packages/SystemUI/res/values/lineage_config.xml
     <!-- Udfps display mode provider class name -->
     <string name="config_udfpsDisplayModeProviderComponent">com.android.systemui.biometrics.PixelUdfpsDisplayModeProvider</string>
+
+    <!-- The package names which can request thermal mitigation. -->
+    <string-array name="thermal_mitigation_allowlisted_packages" translatable="false">
+         <item>com.google.android.connectivitythermalpowermanager</item>
+    </string-array>
 </resources>
