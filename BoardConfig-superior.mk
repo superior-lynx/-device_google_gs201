@@ -1,9 +1,3 @@
-#
-# Copyright (C) 2021 The Calyx Institute
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
