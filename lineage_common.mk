@@ -23,5 +23,12 @@ PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 PRODUCT_PACKAGES += \
     GoogleParts
 
+# Face Unlock
+PRODUCT_PACKAGES += \
+    FaceEnrollAndroid \
+    FaceEnrollAppOverlay \
+    FaceEnrollSettingsOverlay \
+    FaceEnrollSystemUI
+
 # Touch
 include hardware/google/pixel/touch/device.mk
