@@ -18,8 +18,5 @@ PRODUCT_PACKAGES += \
     FaceEnrollOverlay \
     FaceEnrollSettingsOverlay
 
-# PowerShare
-include hardware/google/pixel/powershare/device.mk
-
 # Touch
 include hardware/google/pixel/touch/device.mk
