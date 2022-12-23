@@ -2,6 +2,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
 # Manifests
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += device/google/gs201/lineage_device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += \
     device/google/gs201/android.hardware.security.rkp-service.citadel.xml \
     device/google/gs201/manifest_radio_ds.xml
