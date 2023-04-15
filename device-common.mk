@@ -51,3 +51,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set thermal warm reset
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.thermal_warmreset = true
+
+# Quick Tap
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.columbus.use_ap_sensor=false \
+    persist.columbus.model=tap7cls_coral.tflite
