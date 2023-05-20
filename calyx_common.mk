@@ -11,5 +11,8 @@ DEVICE_PACKAGE_OVERLAYS += device/google/gs201/overlay-calyx
 PRODUCT_PACKAGES += \
     EuiccSupportPixelOverlay
 
+# Lineage Health
+include hardware/google/pixel/lineage_health/device.mk
+
 # Touch
 include hardware/google/pixel/touch/device.mk
