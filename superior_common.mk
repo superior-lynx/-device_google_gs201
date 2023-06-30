@@ -15,8 +15,10 @@ PRODUCT_PACKAGES += \
 
 # Face Unlock
 PRODUCT_PACKAGES += \
-    FaceEnrollOverlay \
-    FaceEnrollSettingsOverlay
+    FaceEnrollAndroid \
+    FaceEnrollAppOverlay \
+    FaceEnrollSettingsOverlay \
+    FaceEnrollSystemUI
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
