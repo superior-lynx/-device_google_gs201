@@ -31,7 +31,3 @@ BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 
 AB_OTA_PARTITIONS += \
     vbmeta_vendor
-	
-	
-# Init
-TARGET_INIT_VENDOR_LIB := //device/google/gs201:libinit_gs201
