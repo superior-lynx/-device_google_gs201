@@ -36,7 +36,7 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a55
 ZYGOTE_FORCE_64 := true
 
 # Force any prefer32 targets to be compiled as 64 bit.
-FORCE_MULTILIB_FIRST_ON_DEVICE := true
+IGNORE_PREFER32_ON_DEVICE := true
 
 # Build the 32 bit targets
 TARGET_2ND_ARCH := arm
@@ -151,6 +151,10 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
+ifneq ($(PRODUCT_BUILD_PVMFW_IMAGE),false)
+BOARD_AVB_VBMETA_SYSTEM += pvmfw
+endif
+
 # Enable chained vbmeta for boot images
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA2048
@@ -190,6 +194,7 @@ BOARD_USE_ENC_SW_CSC := true
 BOARD_SUPPORT_MFC_ENC_RGB := true
 BOARD_USE_BLOB_ALLOCATOR := false
 BOARD_SUPPORT_MFC_ENC_BT2020 := true
+BOARD_SUPPORT_FLEXIBLE_P010 := true
 
 ########################
 
@@ -245,12 +250,15 @@ endif
 # SoundTriggerHAL Configuration
 #BOARD_USE_SOUNDTRIGGER_HAL := false
 
+# Vibrator HAL actuator model and adaptive haptics configuration
+$(call soong_config_set,haptics,actuator_model,$(ACTUATOR_MODEL))
+$(call soong_config_set,haptics,adaptive_haptics_feature,$(ADAPTIVE_HAPTICS_FEATURE))
+
 # HWComposer
 BOARD_HWC_VERSION := hwc3
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := false
 BOARD_HDMI_INCAPABLE := true
 TARGET_USES_HWC2 := true
-HWC_SKIP_VALIDATE := true
 HWC_SUPPORT_RENDER_INTENT := true
 HWC_SUPPORT_COLOR_TRANSFORM := true
 #BOARD_USES_DISPLAYPORT := true
@@ -370,9 +378,6 @@ BOARD_DTBOIMG_PARTITION_SIZE := 0x01000000
 
 # Build vendor kernel boot image
 BOARD_VENDOR_KERNEL_BOOTIMAGE_PARTITION_SIZE := 0x04000000
-
-# System As Root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 # Vendor ramdisk image for kernel development
 BOARD_BUILD_VENDOR_RAMDISK_IMAGE := true
