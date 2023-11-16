@@ -13,7 +13,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 # Lineage Health
-#include hardware/google/pixel/lineage_health/device.mk
+include hardware/google/pixel/lineage_health/device.mk
 
 # Touch
 include hardware/google/pixel/touch/device.mk
